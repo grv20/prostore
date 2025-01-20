@@ -1,8 +1,8 @@
 "use server";
 
-import { isRedirectError } from "next/dist/client/components/redirect";
 import { signIn, signOut } from "@/auth";
-import { signInFormSchema } from "../validator";
+import { signInFormSchema } from "../validators";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 // Sign in the user with credentials
 export async function signInWithCredentials(
