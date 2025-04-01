@@ -1,5 +1,8 @@
 import ProductList from "@/components/shared/product/product-list";
 import { getLatestProducts } from "@/lib/actions/product.actions";
+
+export const revalidate = 300; // Revalidate every 5 minutes
+
 const Homepage = async () => {
   const latestProducts = await getLatestProducts();
   return (
