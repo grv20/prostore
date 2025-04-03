@@ -7,7 +7,7 @@ import {
   getLatestProducts,
 } from "@/lib/actions/product.actions";
 import { Badge } from "@/components/ui/badge";
-import AddToCart from "@/components/shared/product/add-to-cart";
+// import AddToCart from "@/components/shared/product/add-to-cart";
 
 export const revalidate = 120;
 
@@ -74,7 +74,7 @@ const ProductDetailsPage = async (props: {
                     <Badge variant="destructive">Unavailable</Badge>
                   )}
                 </div>
-                {product.stock > 0 && (
+                {/* {product.stock > 0 && (
                   <div className=" flex-center">
                     <AddToCart
                       item={{
@@ -87,7 +87,7 @@ const ProductDetailsPage = async (props: {
                       }}
                     />
                   </div>
-                )}
+                )} */}
               </CardContent>
             </Card>
           </div>
@@ -101,6 +101,10 @@ export default ProductDetailsPage;
 
 export async function generateStaticParams() {
   const products = await getLatestProducts();
+  console.log(
+    "Generating static params for products",
+    products.map((product) => ({ slug: product.slug }))
+  );
   return products.map((product) => ({
     slug: product.slug,
   }));
