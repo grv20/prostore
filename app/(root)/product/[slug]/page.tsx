@@ -6,6 +6,8 @@ import { getProductBySlug } from "@/lib/actions/product.actions";
 import { Badge } from "@/components/ui/badge";
 import AddToCart from "@/components/shared/product/add-to-cart";
 
+export const revalidate = 120;
+
 const ProductDetailsPage = async (props: {
   params: Promise<{ slug: string }>;
 }) => {
