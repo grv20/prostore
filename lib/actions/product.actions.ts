@@ -2,7 +2,6 @@
 import { prisma } from "@/db/prisma";
 import { convertToPlainObject } from "../utils";
 import { LATEST_PRODUCTS_LIMIT } from "../constants";
-import { cache } from "react";
 
 // Get the latest products
 export async function getLatestProducts() {
@@ -15,11 +14,8 @@ export async function getLatestProducts() {
 }
 
 // Get single product by slug
-export const getProductBySlug = cache(async (slug: string) => {
-  console.log("Fetching product from DB...");
+export async function getProductBySlug(slug: string) {
   return await prisma.product.findFirst({
-    where: { slug },
+    where: { slug: slug },
   });
-});
-
-export const revalidate = 120;
+}

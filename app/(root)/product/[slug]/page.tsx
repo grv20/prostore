@@ -2,9 +2,10 @@ import { notFound } from "next/navigation";
 import ProductPrice from "@/components/shared/product/product-price";
 import ProductImages from "@/components/shared/product/product-images";
 import { Card, CardContent } from "@/components/ui/card";
-import { getProductBySlug } from "@/lib/actions/product.actions";
+// import { getProductBySlug } from "@/lib/actions/product.actions";
 import { Badge } from "@/components/ui/badge";
 import AddToCart from "@/components/shared/product/add-to-cart";
+import { getProductBySlug } from "@/lib/actions/cache.actions";
 
 export const revalidate = 120;
 
