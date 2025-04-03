@@ -16,7 +16,10 @@ export async function getLatestProducts() {
 
 // Get single product by slug
 export const getProductBySlug = cache(async (slug: string) => {
+  console.log("Fetching product from DB...");
   return await prisma.product.findFirst({
     where: { slug },
   });
 });
+
+export const revalidate = 120;
