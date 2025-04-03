@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 // import AddToCart from "@/components/shared/product/add-to-cart";
 
 export const revalidate = 120;
+export const dynamic = "force-static";
 
 const ProductDetailsPage = async (props: {
   params: Promise<{ slug: string }>;
@@ -101,10 +102,6 @@ export default ProductDetailsPage;
 
 export async function generateStaticParams() {
   const products = await getLatestProducts();
-  console.log(
-    "Generating static params for products",
-    products.map((product) => ({ slug: product.slug }))
-  );
   return products.map((product) => ({
     slug: product.slug,
   }));
