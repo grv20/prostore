@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: "Cairo", sans-serif;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
 @layer utilities {
   .wrapper {
     @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;

@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome",
+  "signIn": "Sign In",
+  "signup": "Sign Up",
+  "signOut": "Sign Out",
+  "login": "Login",
+  "cart": "Cart",
+  "menu": "Menu",
+  "email": "Email",
+  "password": "Password",
+  "submit": "Submit",
+  "already_have_account": "Already have an account?",
+  "dont_have_account": "Don't have an account?",
+  "notFound": {
+    "title": "Not Found",
+    "description": "Could not find requested resource",
+    "button": "Back to home"
+  }
+}
